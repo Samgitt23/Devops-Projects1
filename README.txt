@@ -1,5 +1,27 @@
 # Devops-Projects1
 
+
+$ sudo yum remove -y aws-cli
+$ pip3 install --user awscli
+$ sudo ln -s $HOME/.local/bin/aws /usr/bin/aws
+$ aws --version
+
+# Installing kubectl
+Refer===https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+$ curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
+$ chmod +x ./kubectl 
+$ mv kubectl /bin  OR $ mv kubectl /usr/local/bin
+$ kubectl version --output=yaml
+
+#Installing or eksctl
+Refer==https://github.com/eksctl-io/eksctl/blob/main/README.md#installation
+$ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+$ cd /tmp
+$ sudo mv /tmp/eksctl /bin   OR  $ sudo mv /tmp/eksctl /usr/local/bin
+$ eksctl version
+
+
+
 # Setup Kubernetes using eksctl
 Refer===https://github.com/aws-samples/eks-workshop/issues/734
 eksctl create cluster --name virtualtechbox-cluster \
